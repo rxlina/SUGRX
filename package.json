@@ -1,0 +1,37 @@
+{
+  "name": "soloproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rxlina/soloproject.git"
+  },
+  "keywords": [],
+  "author": "Lina Shin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rxlina/soloproject/issues"
+  },
+  "homepage": "https://github.com/rxlina/soloproject#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "nodemon": "^2.0.12",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.51.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
