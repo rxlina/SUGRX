@@ -4,6 +4,9 @@
   "description": "",
   "main": "main.js",
   "scripts": {
+    "start": " cross-env NODE_ENV=production node server/server.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "dev": "cross-env NODE_ENV=development webpack serve --open && nodemon server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,19 +22,36 @@
   "homepage": "https://github.com/rxlina/soloproject#readme",
   "devDependencies": {
     "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-async-to-generator": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.2.0",
+    "file-loader": "^6.2.0",
+    "node-forge": "^0.10.0",
     "nodemon": "^2.0.12",
-    "sass-loader": "^12.1.0",
+    "react-test-renderer": "^17.0.2",
     "style-loader": "^3.2.1",
-    "webpack": "^5.51.1"
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0",
+    "webpack-hot-middleware": "^2.25.0"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "path": "^0.12.7",
+    "mongoose": "^6.0.0",
+    "node-fetch": "^2.6.1",
+    "pg": "^8.7.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-hot-loader": "^4.13.0",
+    "react-redux": "^7.2.4",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "webpack": "^5.51.1"
   }
 }
