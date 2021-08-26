@@ -3,11 +3,8 @@ import React from 'react';
 
 const entryCreator = props => {
     return (
-        <div className="entryCreateBox">
-            <form>
-                <input type="number"/>
-                <button type="submit" onClick={props.handleClick}>Submit</button>
-            </form>
+        <div className="createNewEntryButton">
+            <button onClick={props.handleClick}>Create New Entry</button>
         </div>
     );
 }

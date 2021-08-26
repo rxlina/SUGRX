@@ -15,6 +15,16 @@ module.exports = {
     },
     port: 8080,
     hot: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+    proxy: {
+      '/api/**': {
+        target: 'http://localhost:3000',
+        secure: false,
+        changeOrigin: true,
+      },
+    },
   },
   module: {
     rules: [

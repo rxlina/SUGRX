@@ -2,17 +2,31 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const entryController = require('./controllers/entryController');
+const api = require('./routes/api.js');
 const PORT = 3000;
 
-const mongoURI = 'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000';
-mongoose.connect(mongoURI);
+const mongoURI = 'mongodb://127.0.0.1:27017/mybloodglucoselog';
+mongoose.connect(mongoURI, () => {
+    console.log('connected to mongo', mongoURI)
+});
 
-app.get('/', entryController.getAllEntries, (req, res) => {
+app.use('/api', api);
+
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../index.html'));
 })
 
-// app.post('/new', entryController.createEntry, (req, res) => {
+app.get('/new', (req, res) => {
+    res.redirect('/newentry');
+})
 
-// })
+app.post('/newentry', entryController.createEntry, (req, res) => {
+    res.redirect('/');
+})
 
-module.exports = app.listen(3000, () => console.log(`Server listening on port: ${PORT}...`));
+app.use('*', (req,res) => {
+    res.status(404).send('Not Found');
+});
+
+module.exports = app.listen(PORT, () => console.log(`Server listening on port: ${PORT}...`));
