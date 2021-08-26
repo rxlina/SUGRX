@@ -4,8 +4,8 @@ const Entry = props => {
     const { entryData } = props;
     console.log(entryData);
     return (
-        <div>
-            <div>{entryData.bloodGlucose}</div>
+        <div className="entryBox">
+            <div>{entryData.bloodGlucose}{entryData.fasting}</div>
             <div>{entryData.createdAt}</div>
         </div>
     )

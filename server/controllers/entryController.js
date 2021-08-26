@@ -11,6 +11,7 @@ entryController.getAllEntries = (req, res, next) => {
 }
 
 entryController.createEntry = (req, res, next) => {
+    console.log(req.body);
     Entry.create(req.body, (err, newEntry) => {
         if (err) return res.sendStatus(400);
         res.locals.entry = newEntry;
