@@ -35,7 +35,8 @@ class EntryForm extends Component {
             <div className="formBox">
                 <p className="input">Blood Glucose<input className="bloodGlucoseInput" type="number" name="bloodGlucose" label="bloodGlucose" onChange={this.handleChange} min="0" max="99"></input></p>
                 <p className="input">Fasting<input className="fastingCheckbox" type="checkbox" name="fasting" label="fasting" value="F" onChange={this.handleChange}></input></p>
-                <button type="submit" onClick={this.handleSubmit}>Submit</button>
+                <button type="submit" onClick={this.props.mainHandleClick}>Return</button>
+                <button className="submitButton" type="submit" onClick={() => {this.handleSubmit(); this.props.mainHandleClick();}}>Submit</button>
             </div>
         )
     }

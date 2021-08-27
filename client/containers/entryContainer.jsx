@@ -29,6 +29,11 @@ class EntryContainer extends Component {
         this.setState({ view: 'form' });
     };
 
+    mainHandleClick = () => {
+        this.setState({ view: 'main'});
+        window.location.reload(false);
+    }
+
     render() {
         if (this.state.view === 'main') {
             return (
@@ -41,7 +46,7 @@ class EntryContainer extends Component {
         else if (this.state.view === 'form') {
             return (
                 <div>
-                    <EntryForm />
+                    <EntryForm mainHandleClick={this.mainHandleClick}/>
                 </div>
             )
         }

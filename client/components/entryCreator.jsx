@@ -4,6 +4,7 @@ import React from 'react';
 const entryCreator = props => {
     return (
         <div className="createNewEntryButton">
+            <button>My Meds</button>
             <button onClick={props.handleClick}>Create New Entry</button>
         </div>
     );
